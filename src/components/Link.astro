@@ -1,0 +1,24 @@
+---
+interface Link {
+    path: string,
+    text: string,
+    bg: string
+    styleClass: string,
+    isFilled: boolean,
+    isRounded: boolean,
+    isSelected: boolean
+}
+
+
+const {
+    path, 
+    text, 
+    isFilled=false,
+    styleClass,
+    isRounded=false,
+    isSelected=false,
+    } = Astro.props as Link
+---
+
+
+<a href={path} class:list={["py-1", "px-3", "m-1", styleClass, isRounded ? "rounded-full": "",  {filled: isFilled, selected: isSelected}]}>{text}</a>

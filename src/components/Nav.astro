@@ -1,0 +1,54 @@
+---
+// Astro utils
+import { Icon } from "astro-icon/components"
+
+// Nav bar data
+import navData from "../data/navData.mjs"
+import Link from "./Link.astro"
+---
+
+
+<nav aria-label="Navigation bar" class="fixed w-full">
+    <div class="container flex justify-between items-center px-3 py-5 ">
+        <a href="/" aria-label="Go Home">
+            <Icon name="logo" width="60" height="40"/>
+        </a>
+        <div class="flex items-center border border-gray-500 rounded-full p-2 bg-stone-800/60">
+            <ul>
+                {
+                    navData.map((data) =>
+                    <Link 
+                        path={data.path} 
+                        text={data.title}
+                        styleClass="navlink"
+                        isRounded={true}
+                        isSelected={data.path === Astro.url.pathname}
+                    />
+                )
+                }
+            </ul>
+        </div>
+        <div>
+
+        </div>
+    </div>
+</nav>
+
+
+<style>
+    .navlink {
+        color: white;   
+    }
+
+    .navlink:hover{
+        color: var(--color-primary)
+    }
+
+    .navlink .selected{
+        background-color: hsla(var(--primary-hue), .70);
+    }
+
+    .navlink .selected:hover{
+        color: white
+    }
+</style>

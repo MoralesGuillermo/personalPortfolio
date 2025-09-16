@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root{
+    --primary-hue: 143.881;
+    --secondary-hue: 246.984;
+    --primary: var(--primary-hue), 100%, 39%;
+    --secondary: var(--secondary-hue), 91%, 59%;
+}
+
+/* Cleaning the default CSS body*/
+body{
+    margin: 0;
+}
+
+/*Custom tailwind class utilities*/
+@theme{
+    --color-primary: hsl(var(--primary));
+    --color-secondary: hsl(var(--secondary));
+}
+
+/*Custom classes*/
+
+/*Nav bar classes*/
+.navlink {
+    color: white;   
+}
+
+.navlink:hover{
+    color: var(--color-primary)
+}
+
+.navlink.selected{
+    background-color: hsla(var(--primary), .70);
+}
+
+.navlink.selected:hover{
+    color: white
+}

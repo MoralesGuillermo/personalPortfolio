@@ -1,0 +1,32 @@
+---
+// Component imports
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav.astro";
+import MainHead from "./MainHead.astro";
+
+// Styles
+import "../styles/global.css"   
+
+
+const {title , description} = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<MainHead {title} {description}/>
+<body class="layout">
+    <Nav />
+    <main>
+        <slot />
+    </main>
+    <Footer />
+</body>
+</html>
+
+<style>
+    .layout{
+        display: grid;
+        min-height: 100dvh;
+        grid-template-rows: 1fr auto;
+    }
+</style>
