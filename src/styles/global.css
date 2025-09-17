@@ -20,9 +20,12 @@ body{
 
 /*Custom classes*/
 
-/*Nav bar classes*/
+/*Nav styles*/
 .navlink {
-    color: white;   
+    color: white;
+    padding: calc(var(--spacing) * 1) calc(var(--spacing) * 3);
+    margin: calc(var(--spacing) * 1)
+       
 }
 
 .navlink:hover{

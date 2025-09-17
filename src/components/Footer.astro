@@ -1,6 +1,56 @@
 ---
+import Link from "./Link.astro";
+
+import navData from "../data/navData.mjs";
+
+const footerIcon = {
+        name: "logo",
+        atLeft: true,
+        width: 40,
+        height: 40
+}
 ---
 
-<div>
-    Este es el footer
-</div>
+<footer aria-label="Footer" class="bg-stone-900 text-stone-200">
+    <div class="pt-10 px-10">
+        <div>
+            <Link 
+                path="/"
+                icon={footerIcon}
+            />
+        </div>
+        <div class="container mx-auto flex justify-between my-3 text-start">
+            <div>
+                <small class="text-lg text-stone-600 font-semibold">Directory</small>
+                <ul>
+                    {
+                    navData.map((data) =>
+                    <li class="hover:text-stone-400 transform hover:translate-x-3 transition-transform duration-300 ease-in-out"> 
+                        <Link 
+                            path={data.path} 
+                            text={data.title}
+                        />
+                    </li>
+                )
+                }
+                </ul>
+            </div>
+            <div>
+                <small class="text-lg text-stone-600 font-semibold">Contact Information</small>
+                <ul>
+                    <li class="hover:text-stone-400 transform hover:translate-x-3 transition-transform duration-300 ease-in-out">
+                        <Link path="mailto:morales.guillermo2503@gmail.com" text="morales.guillermo2503@gmail.com"/>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <small class="text-lg text-stone-600 font-semibold">My socials</small>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center p-3 mt-4">
+        <small>
+            &copy; <span id="copyright">Guillermo Morales</span> | All rights reserved
+        </small>
+    </div>
+</footer>
