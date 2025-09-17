@@ -7,7 +7,7 @@ interface Icon{
     atLeft: boolean,
     width?: number,
     height?: number
-}
+};
 
 interface Link {
     path: string,
@@ -16,9 +16,10 @@ interface Link {
     styleClass: string,
     isFilled: boolean,
     isRounded: boolean,
-    isSelected: boolean
-    icon?: Icon;
-}
+    isSelected: boolean,
+    newTab: boolean, 
+    icon?: Icon,
+};
 
 
 const {
@@ -27,12 +28,13 @@ const {
     styleClass,
     isRounded=false,
     isSelected=false,
+    newTab=false,
     icon,
     } = Astro.props as Link
 ---
 
 
-<a href={path} class:list={[styleClass,   {selected: isSelected, "rounded-full": isRounded}]}>
+<a href={path} target={newTab? "_blank": "_self" } class:list={[styleClass, "text-center", {selected: isSelected, "rounded-full": isRounded}]}>
     {
         icon && icon.atLeft && (
             <Icon name={icon.name} width={icon.width? icon.width: 24} height={icon.height? icon.height: 24}/>
