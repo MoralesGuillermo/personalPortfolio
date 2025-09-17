@@ -9,11 +9,11 @@ import Link from "./Link.astro"
 
 
 <nav aria-label="Navigation bar" class="fixed w-full">
-    <div class="container flex justify-between items-center px-3 py-5 ">
+    <div class="flex justify-between items-center px-3 py-5 ">
         <a href="/" aria-label="Go Home">
             <Icon name="logo" width="60" height="40"/>
         </a>
-        <div class="flex items-center border border-gray-500 rounded-full p-2 bg-stone-800/60">
+        <div class="flex items-center border border-gray-500 rounded-full p-2 bg-stone-800/60 max-sm:hidden">
             <ul>
                 {
                     navData.map((data) =>
@@ -29,7 +29,7 @@ import Link from "./Link.astro"
             </ul>
         </div>
         <div>
-
+            <Icon name="grommet-icons:menu" width="60" height="40" aria-label="Menu" class="cursor-pointer sm:hidden"/>
         </div>
     </div>
 </nav>
