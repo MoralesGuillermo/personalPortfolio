@@ -2,9 +2,12 @@
 
 :root{
     --primary-hue: 143.881;
-    --secondary-hue: 246.984;
+    --secondary-hue: 22;
     --primary: var(--primary-hue), 100%, 39%;
-    --secondary: var(--secondary-hue), 91%, 59%;
+    --primary-light: var(--primary-hue), 100%, 50%;
+    --primary-dark: var(--primary-hue), 100%, 25%;
+    --secondary: var(--secondary-hue), 100%, 50%;
+    --secondary-light: var(--secondary-hue), 100%, 60%;
 }
 
 /* Cleaning the default CSS body*/
@@ -15,7 +18,10 @@ body{
 /*Custom tailwind class utilities*/
 @theme{
     --color-primary: hsl(var(--primary));
+    --color-primary-light: hsl(var(--primary-light));
+    --color-primary-dark: hsl(var(--primary-dark));
     --color-secondary: hsl(var(--secondary));
+    --color-secondary-light: hsl(var(--secondary-light))
 }
 
 /*Custom classes*/
@@ -29,13 +35,13 @@ body{
 }
 
 .navlink:hover{
-    color: var(--color-primary)
+    color: var(--color-primary-light)
 }
 
 .navlink.selected{
-    background-color: hsla(var(--primary), .70);
+    background-color: hsla(var(--primary-dark), .70);
 }
 
 .navlink.selected:hover{
-    color: white
+    color: white;
 }
