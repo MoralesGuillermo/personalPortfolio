@@ -1,7 +1,12 @@
 ---
+// Component imports
 import Link from "./Link.astro";
 
+// Data
 import navData from "../data/navData.mjs";
+
+// CSS Effects
+import * as Effects from "../js/effects.mjs";
 
 const footerIcon = {
         name: "logo",
@@ -19,10 +24,6 @@ const linkedinIcon = {
     name: "grommet-icons:linkedin-option",
     atLeft: true,
 }
-
-const hoverScale = "transform hover:scale-125 transition-transform duration-300 ease-in-out"
-const hoverPrimary = "hover:text-primary"
-const hoverTranslateRight = "transform hover:translate-x-3 transition-transform duration-300 ease-in-out"
 ---
 
 <footer aria-label="Footer" class="bg-stone-950 text-stone-200">
@@ -39,7 +40,7 @@ const hoverTranslateRight = "transform hover:translate-x-3 transition-transform 
                 <ul>
                     {
                     navData.map((data) =>
-                    <li class={`${hoverPrimary} ${hoverTranslateRight}`}> 
+                    <li class={`${Effects.hoverPrimary} ${Effects.hoverTranslateRight}`} class:list={[Effects.easeInFast]}> 
                         <Link 
                             path={data.path} 
                             text={data.title}
@@ -52,7 +53,7 @@ const hoverTranslateRight = "transform hover:translate-x-3 transition-transform 
             <div>
                 <small class="text-lg text-stone-600 font-semibold">Contact Information</small>
                 <ul>
-                    <li class={`${hoverPrimary} ${hoverTranslateRight}`}>
+                    <li class={`${Effects.hoverPrimary} ${Effects.hoverTranslateRight}`} class:list={[Effects.easeInFast]}>
                         <Link path="mailto:morales.guillermo2503@gmail.com" text="morales.guillermo2503@gmail.com"/>
                     </li>
                 </ul>
@@ -60,10 +61,10 @@ const hoverTranslateRight = "transform hover:translate-x-3 transition-transform 
             <div>
                 <small class="text-lg text-stone-600 font-semibold">My socials</small>
                 <ul class="flex justify-between my-1">
-                    <li class={`${hoverScale} ${hoverPrimary}`}>
+                    <li class={`${Effects.hoverScale125} ${Effects.hoverPrimary}`} class:list={[Effects.easeInFast]}>
                         <Link path="https://github.com/MoralesGuillermo" icon={githubIcon} newTab={true}/>
                     </li>
-                    <li class={`${hoverScale} ${hoverPrimary}`}>
+                    <li class={`${Effects.hoverScale125} ${Effects.hoverPrimary}`} class:list={[Effects.easeInFast]}>
                         <Link path="/" icon={linkedinIcon}/ newTab={true}>
                     </li>
                 </ul>
