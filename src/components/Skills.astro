@@ -1,0 +1,34 @@
+---
+// Component imports
+import Pill from "./Pill.astro";
+
+// Data
+import skills from "../data/Skills.mjs"
+
+interface Skill{
+    name: string,
+    text: string,
+    color: string
+}
+
+// Skill showcase section
+
+---
+
+<section class="bg-primary-dark py-25 relative">
+    <div class="container mx-auto py-2">
+        <div class="text-center my-12 text-stone-50">
+            <h2 class="text-7xl font-bold">My Skills</h2>
+            <p class="my-5 text-2xl text-stone-200">The tools I use to make dreams a reality</p>
+        </div>
+        <div class="flex justify-center">
+            <div class="flex flex-wrap justify-center max-w-5/8 gap-2 lg:gap-3">
+                {
+                    skills.map((skill: Skill) => (
+                        <Pill name={skill.name} text={skill.text} color={skill.color} />
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>

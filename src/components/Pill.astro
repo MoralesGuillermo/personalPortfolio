@@ -2,12 +2,15 @@
 import { Icon } from "astro-icon/components";
 
 const {name, text, color} = Astro.props;
+
+const hoverScale = "transform hover:scale-125 transition-transform duration-300 ease-in-out";
+const hoverIncreaseMargin= "hover:mx-2";
 ---
 
 
-<span class="rounded-full px-3 py-1 bg-stone-900 text-stone-50 m-1 inline-flex items-center">
+<span class="rounded-full px-3 py-2 bg-stone-900/90 text-stone-50 inline-flex items-center select-none" class:list={[hoverScale, hoverIncreaseMargin]}>
     <span style=`color: ${color}` class="px-1">
-        <Icon name={name} width="35" height="35" class="inline"/>
+        <Icon name={name} width="26" height="26" class="inline"/>
     </span>
     <small class="text-sm px-1 font-semibold">{text}</small>
 </span>

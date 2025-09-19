@@ -1,6 +1,7 @@
 ---
 import Hook from "../components/Hook.astro";
 import Pill from "../components/Pill.astro";
+import Skills from "../components/Skills.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 
 
@@ -11,7 +12,5 @@ const description = "Guillermo Morales' professional portfolio"
 
 <MainLayout {title} {description}>
     <Hook />
-    <div class="m-5">
-        <Pill name="tech/php" text="PHP" color="#777BB4"/>
-    </div>
+    <Skills />
 </MainLayout>
