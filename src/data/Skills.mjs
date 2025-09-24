@@ -11,7 +11,7 @@ const skills = [
     {
         name: "tech/python",
         text: "Python",
-        color: "",
+        color: "#3776AB",
     },
     {
         name: "tech/fastapi",
