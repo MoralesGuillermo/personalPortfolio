@@ -21,7 +21,7 @@ const skills = [
     {
         name: "tech/java",
         text: "Java",
-        color: "",
+        color: "#f89820",
     },
     {
         name: "tech/springboot",
