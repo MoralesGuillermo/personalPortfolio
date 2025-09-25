@@ -7,9 +7,9 @@ const {title, iconName, smallText, logoBg} = Astro.props
 ---
 
 
-<div class="inline-flex w-50 text-stone-50 rounded-lg m-10 select-none">
+<div class="inline-flex w-50 text-stone-50 rounded-lg select-none"  class:list={[Effects.hoverScale125, Effects.hoverIncreaseMargin, Effects.easeInFast]}>
     <div class="flex justify-center items-center px-5 py-2 rounded-l-lg" style=`background-color: ${logoBg}`>
-        <Icon name={iconName} width="26" height="26"/>
+        <Icon name={iconName} width="28" height="28"/>
     </div>
     <div class="bg-stone-900/90 flex flex-1 flex-col rounded-r-lg px-3 py-1">
         <div>

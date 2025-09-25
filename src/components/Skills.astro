@@ -1,10 +1,16 @@
 ---
 // Component imports
-import Pill from "./Pill.astro";
+import SmallCard from "./SmallCard.astro";
 
 // Data
-import skills from "../data/Skills.mjs"
-import SmallCard from "./SmallCard.astro";
+import backendSkills from "../data/backendSkills.mjs"
+import frontendSkills from "../data/frontendSkills.mjs"
+import databaseSkills from "../data/databaseSkills.mjs"
+import infrastructureSkills from "../data/infrastructureSkills.mjs"
+import versionControlSkills from "../data/versionControlSkills.mjs"
+import miscellaneousSkills from "../data/miscellaneousSkills.mjs"
+import languageSkills from "../data/languageSkills.mjs"
+
 
 interface Skill{
     name: string,
@@ -22,14 +28,78 @@ interface Skill{
             <h2 class="text-7xl font-bold">My Skills</h2>
             <p class="my-5 text-2xl text-stone-200">The tools I use to make dreams a reality</p>
         </div>
-        <div class="flex justify-center">
-            <div class="flex flex-wrap justify-center max-w-5/8 gap-3 max-sm:gap-2 max-sm:max-w-9/10 max-lg:max-w-7/10 ">
-                {
-                    skills.map((skill: Skill) => (
-                        <Pill name={skill.name} text={skill.text} color={skill.color} />
-                    ))
-                }
+        <div class="text-stone-50">
+            <div class="my-7">
+                <h3 class="text-4xl font-semibold max-sm:text-center" >Backend Technologies</h3>
+                <div class="flex flex-wrap gap-x-7 gap-y-5 py-5 max-sm:flex max-sm:justify-center">
+                    {
+                        backendSkills.values().map(skill => 
+                            (<SmallCard title={skill.text} iconName={skill.name} smallText={skill.proficiency} logoBg={skill.color} />)
+                        )
+                    }
+                </div>
             </div>
+            <div class="my-7">
+                <h3 class="text-4xl font-semibold max-sm:text-center">Frontend Technologies</h3>
+                <div class="flex flex-wrap gap-x-7 gap-y-5 py-5 max-sm:flex max-sm:justify-center">
+                    {
+                        frontendSkills.values().map(skill => 
+                            (<SmallCard title={skill.text} iconName={skill.name} smallText={skill.proficiency} logoBg={skill.color} />)
+                        )
+                    }
+                </div>
+            </div>
+            <div class="my-7">
+                <h3 class="text-4xl font-semibold max-sm:text-center">Databases</h3>
+                <div class="flex flex-wrap gap-x-7 gap-y-5 py-5 max-sm:flex max-sm:justify-center">
+                    {
+                        databaseSkills.values().map(skill => 
+                            (<SmallCard title={skill.text} iconName={skill.name} smallText={skill.proficiency} logoBg={skill.color} />)
+                        )
+                    }
+                </div>
+            </div>
+            <div class="my-7">
+                <h3 class="text-4xl font-semibold max-sm:text-center">Infrastructure</h3>
+                <div class="flex flex-wrap gap-x-7 gap-y-5 py-5 max-sm:flex max-sm:justify-center">
+                    {
+                        infrastructureSkills.values().map(skill => 
+                            (<SmallCard title={skill.text} iconName={skill.name} smallText={skill.proficiency} logoBg={skill.color} />)
+                        )
+                    }
+                </div>
+            </div>
+            <div class="my-7">
+                <h3 class="text-4xl font-semibold max-sm:text-center">Version Control</h3>
+                <div class="flex flex-wrap gap-x-7 gap-y-5 py-5 max-sm:flex max-sm:justify-center">
+                    {
+                        versionControlSkills.values().map(skill => 
+                            (<SmallCard title={skill.text} iconName={skill.name} smallText={skill.proficiency} logoBg={skill.color} />)
+                        )
+                    }
+                </div>
+            </div>
+            <div class="my-7">
+                <h3 class="text-4xl font-semibold max-sm:text-center">Miscellaneous</h3>
+                <div class="flex flex-wrap gap-x-7 gap-y-5 py-5 max-sm:flex max-sm:justify-center">
+                    {
+                        miscellaneousSkills.values().map(skill => 
+                            (<SmallCard title={skill.text} iconName={skill.name} smallText={skill.proficiency} logoBg={skill.color} />)
+                        )
+                    }
+                </div>
+            </div>
+            <div class="my-7">
+                <h3 class="text-4xl font-semibold max-sm:text-center">Languages</h3>
+                <div class="flex flex-wrap gap-x-7 gap-y-5 py-5 max-sm:flex max-sm:justify-center">
+                    {
+                        languageSkills.values().map(skill => 
+                            (<SmallCard title={skill.text} iconName={skill.name} smallText={skill.proficiency} logoBg={skill.color} />)
+                        )
+                    }
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
