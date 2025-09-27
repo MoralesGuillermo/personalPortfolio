@@ -1,0 +1,24 @@
+---
+import Card from "./Card.astro";
+import Link from "./Link.astro";
+
+const temisDescription = "Temis, is a legal ERP designed for smart legal management. Temis let lawyers admister their cases, files, clients, invoices, due dates, etc. so they can focus on their passion and what they do best"
+
+---
+
+<section class="py-25 relative">
+    <div class="text-center my-12">
+        <h2 class="text-7xl font-bold">Projects <span class="italic text-primary">Hightlights</span></h2>
+        <p class="my-5 text-2xl">Curated work I have been part of</p>
+    </div>
+    <div class="flex flex-wrap gap-15 justify-center">
+        <Card title="Temis Software" text={temisDescription} imgSrc="/images/TemisHeroImage.jpg" redirectUrl="Projects">
+            <div><p>Silver medalist at the IS Startup-Challenge!</p></div>
+        </Card>
+        <Card title="Temis Software" text={temisDescription} imgSrc="/images/headshot.jpg" redirectUrl="Projects"/>
+        <Card title="Temis Software" text={temisDescription} imgSrc="/images/headshot.jpg" redirectUrl="Projects"/>
+    </div>
+    <div class="flex justify-center my-15">
+        <Link path="/projects" text="Check more of my work" styleClass=`border border-solid border-primary-dark p-3 font-semibold text-primary-dark hover:bg-primary-dark hover:text-stone-50 transition duration-200 ease-in-out` isRounded={true}/>
+    </div>
+</section>
