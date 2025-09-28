@@ -1,0 +1,44 @@
+---
+import MainLayout from "./MainLayout.astro";
+import skills from "../data/Skills.mjs"
+import Pill from "../components/Pill.astro";
+import { Image } from "astro:assets";
+
+interface ProjectTag{
+    name: String,
+    text: String,
+    color: String,
+    proficiency: String
+}
+
+// Project frontmatter
+const { frontmatter } = Astro.props;
+const {title, description, cover, carousel, tags, repo} = frontmatter;
+const projectTags = tags.map((tag: String) => skills.get(tag)) as ProjectTag[]
+
+---
+
+<MainLayout>
+    <div class="px-80 pb-40 max-lg:px-20 max-md:px-5 font-thin">
+        <h1 class="text-5xl font-semibold">{title}</h1>
+        <p class="text-2xl my-3 font-thin">{description}</p>
+        <!-- Carousel goes here -->
+        <div class="my-5">
+            <Image class="rounded-lg aspect-2/1 object-cover w-full" src={"/images/TemisHeroImage.jpg"} alt="Temis" width="1200" height="1400" tabindex="-1"/>
+        </div> 
+        <div class="mb-10">
+            <p class="text-3xl font-thin">Tech Stack:</p>
+            <div class="flex flex-wrap gap-3 my-3">
+            {
+                projectTags.map((tag: ProjectTag) => (<Pill name={tag.name} text={tag.text} color={tag.color}/>))
+            }
+            </div>
+        </div>
+        <div>
+            <slot></slot>
+        </div>
+    </div>
+</MainLayout>
+
+
+
