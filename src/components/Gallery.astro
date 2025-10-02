@@ -1,0 +1,45 @@
+---
+// Effects imports
+import { hoverIncreaseMargin, hoverScale125, easeInFast } from "../js/effects.mjs";
+
+interface Image{
+    src: string,
+    alt?: string,
+}
+
+const {images} = Astro.props
+---
+
+<div class="w-full max-w-full">
+    <div class="flex justify-center bg-stone-100 col-span-2">
+        <div class="p-10 overflow-x-auto w-full inline-flex gap-10">
+            {
+                images.map((image: Image) =>  
+                    (
+                        <div class="miniImage hover:cursor-pointer shrink-0" class:list={[hoverIncreaseMargin, hoverScale125, easeInFast]}>
+                            <img class="aspect-2/1" src={image.src} alt={image.alt} width="400" height="400">
+                        </div>
+                    )
+                )
+            }
+        </div>
+    </div>
+</div>
+    <div class="w-full mb-5 rounded-lg h-1/2 col-span-3">
+        <img id="thumbnail" class="object-cover max-sm:object-scale-down " src={images[0].src} alt="Temis landing">
+    </div>
+
+<script>
+    const thumbnail = document.getElementById("thumbnail")
+    const miniImages = document.querySelectorAll(".miniImage")
+    for (const miniImage of miniImages){
+        miniImage.addEventListener("click", (event) => {
+            const newSrc = event.target.src;
+            thumbnail.src = newSrc;
+        })
+
+    }
+
+
+    
+</script>
