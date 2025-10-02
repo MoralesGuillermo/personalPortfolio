@@ -2,7 +2,36 @@
 title: "Temis: Smart Legal Management"
 description: "Temis, is a legal ERP designed for smart legal management. Temis lets lawyers admister their cases, files, clients, invoices, due dates, etc. so they can focus on their passion and what they do best"
 cover: "/images/temis/TemisHeroImage"
-carousel: ["/images/temis/TemisHeroImage"]
+images: [
+    {
+        src: "/images/temis/TemisHeroImage.jpg",
+        alt: "Temis landing page"
+    },
+    {
+        src: "/images/temis/MainDashboard.jpg",
+        alt: "Temis main dashboard"
+    },
+    {
+        src: "/images/temis/Agenda.jpg",
+        alt: "Temis agenda"
+    },
+    {
+        src: "/images/temis/Billing.jpg",
+        alt: "Temis billing page"
+    },
+    {
+        src: "/images/temis/CaseDetail.jpg",
+        alt: "Temis case detail page"
+    },
+    {
+        src: "/images/temis/Cases.jpg",
+        alt: "Temis cases page"
+    },
+    {
+        src: "/images/temis/InvoiceDetail.jpg",
+        alt: "Temis invoice detail page"
+    },
+]
 layout: "../../layouts/ProjectLayout.astro" 
 tags: ["python", "fastapi", "postgresql", "aws", "aws ec2"]
 repo: "https://github.com/MoralesGuillermo/Temis-backend"
@@ -10,5 +39,6 @@ repo: "https://github.com/MoralesGuillermo/Temis-backend"
 import  Footer  from "../../components/Footer.astro";
 import Image from "astro/components/Image.astro";
 
-<h2 class="text-4xl font-semibold">About Temis</h2>
-<p class="text-2xl">{frontmatter.description}</p>
+## About Temis
+
+Temis is a legal tech startup envisioned to help lawyers manage their cases, clients, files, etc. the smart way. With Temis, people in the legal business can focus on their higher priority tasks
