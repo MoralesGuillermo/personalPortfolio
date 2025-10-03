@@ -1,8 +1,15 @@
 h2{
     font-size: var(--text-4xl);
-    font-weight: var(--font-weight-semibold)
+    font-weight: var(--font-weight-semibold);
+    margin-top: 3rem;
+}
+
+h3{
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-semibold);
 }
 
 p{
     font-size: var(--text-2xl);
+    margin-bottom: 1.5rem;
 }
