@@ -29,8 +29,17 @@ import Link from "./Link.astro"
             </ul>
         </div>
         <div>
-            <Icon name="grommet-icons:menu" width="60" height="40" aria-label="Menu" class="cursor-pointer sm:hidden"/>
+            <Icon id="burger" name="grommet-icons:menu" width="60" height="40" aria-label="Menu" class="cursor-pointer sm:hidden"/>
         </div>
+    </div>
+    <div id="burger-menu" class="hidden flex flex-col justify-center md:hidden" data-hidden="true">
+        {
+            navData.map((data) => (
+                <div class="border border-b bg-stone-50  text-2xl p-5 border-gray-300">
+                    <a class="hover:text-primary" href={data.path}>{data.title}</a>
+                </div>
+            ))
+        }
     </div>
 </nav>
 
@@ -52,3 +61,29 @@ import Link from "./Link.astro"
         color: white
     }
 </style>
+
+<script>
+    // Responsive burger menu logic
+    const body = document.querySelector("body");
+    const burger = document.getElementById("burger");
+    const responsiveMenu = document.getElementById("burger-menu")
+    burger?.addEventListener("click", (event) => {
+        if (responsiveMenu?.dataset.hidden === "true"){
+            responsiveMenu.classList.remove("hidden");
+            responsiveMenu.dataset.hidden = "false"
+        }else{
+            responsiveMenu?.classList.add("hidden");
+            responsiveMenu.dataset.hidden = "true";
+        }
+    });
+
+    // Add logic to close the burger menu if any place of the site is touched
+    body?.addEventListener("touchstart", (event) => {
+        // Do not run the logic if the burger menu is pressed or if a nav menu option is pressed
+        if (responsiveMenu?.dataset.hidden !== "true" && event.target !== burger && !responsiveMenu?.contains(event.target)){
+            responsiveMenu?.classList.add("hidden");
+            responsiveMenu.dataset.hidden = "true"
+        }
+    })
+
+</script>
