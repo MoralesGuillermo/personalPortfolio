@@ -12,6 +12,13 @@ const skills = [
         proficiency: "Advanced",
     },
     {
+        name: "tech/js",
+        text: "Javascript",
+        color: "#F7DF1E",
+        proficiency: "Advanced",
+    },
+    
+    {
         name: "tech/tailwindcss",
         text: "Tailwind",
         color: "#06B6D4",
