@@ -77,7 +77,7 @@ import Link from "./Link.astro"
         }
     });
 
-    // Add logic to close the burger menu if any place of the site is touched
+    // Add logic to close the burger menu if any place of the site is touched (unless is the burger menu or the nav options)
     body?.addEventListener("touchstart", (event) => {
         // Do not run the logic if the burger menu is pressed or if a nav menu option is pressed
         if (responsiveMenu.dataset.hidden !== "true" && event.target !== burger && !responsiveMenu?.contains(event.target as Node)){
