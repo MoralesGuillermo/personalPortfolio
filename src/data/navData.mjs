@@ -8,10 +8,6 @@ const navData = [
         path: "/projects"
     },
     {
-        title: "About me",
-        path: "/about"
-    },
-    {
         title: "Certifications",
         path: "/certifications"
     },
