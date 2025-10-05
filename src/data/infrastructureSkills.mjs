@@ -9,6 +9,12 @@ const skills = [
         name: "tech/ec2",
         text: "AWS EC2",
         color: "#FC390E",
+        proficiency: "Intermediate"
+    },
+    {
+        name: "tech/s3",
+        text: "AWS S3",
+        color: "#2CA02C",
         proficiency: "Exploring it"
     },
 ];
