@@ -2,8 +2,11 @@
 import Highlights from "../../components/Highlights.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 
+const title = "Projects | Guillermo Morales | Software Engineer"
+const description = "All the projects that Guillermo Morales has worked on"
+
 ---
 
-<MainLayout>
+<MainLayout {title} {description}>
     <Highlights limitEntries={false}/>
 </MainLayout>
