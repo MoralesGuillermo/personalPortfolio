@@ -1,0 +1,41 @@
+---
+import { hoverPrimary, hoverScale125, easeInFast } from "../js/effects.mjs";
+import Link from "./Link.astro";
+
+const githubIcon = {
+    name: "grommet-icons:github",
+    atLeft: true,
+    width: "40",
+    height: "40",
+}
+
+const linkedinIcon = {
+    name: "grommet-icons:linkedin-option",
+    atLeft: true,
+    width: "40",
+    height: "40",
+}
+
+---
+
+<section id="contact" class="pb-25 relative px-50">
+    <div class="text-center my-12">
+        <h2 class="text-7xl font-bold">Want to work <span class="italic text-primary">together</span>?</h2>
+        <p class="my-5 text-2xl">Lets connect and build something awesome!</p>
+    </div>
+    <div class="flex justify-center">
+        <Link path="/projects" text="Contact me" styleClass=`border border-solid border-primary-dark py-3 px-10 font-semibold text-xl text-primary-dark hover:bg-primary-dark hover:text-stone-50 transition duration-200 ease-in-out` isRounded={true}/>
+    </div>
+    <div class="text-center my-12">
+        <p class="my-5 text-2xl">I'm available for both <span class="font-semibold">full-time positions</span> and <span class="font-semibold">software contracting</span></p>
+        <p class="my-5 text-2xl text-stone-500">I'm passionate about my work and I'm always ready to follow a new challenge! Let's build your next BIG idea and make it a <span class="italic">reality</span>!</p>
+    </div>
+    <ul class="text-center my-12 flex justify-center gap-10"}>
+        <li class:list={[hoverPrimary, hoverScale125, easeInFast]}>
+            <Link path="https://github.com/MoralesGuillermo" icon={githubIcon} newTab={true}/>
+        </li>
+        <li class:list={[hoverPrimary, hoverScale125, easeInFast]}>
+            <Link path="/" icon={linkedinIcon}/ newTab={true}>        
+        </li>
+    </ul>
+</section>
