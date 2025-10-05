@@ -1,24 +1,57 @@
 ---
+// Component imports
 import Card from "./Card.astro";
 import Link from "./Link.astro";
 
-const temisDescription = "Temis, is a legal ERP designed for smart legal management. Temis let lawyers admister their cases, files, clients, invoices, due dates, etc. so they can focus on their passion and what they do best"
+// JS Utilities
+import {sortByPriority} from "../js/utils.mjs";
 
+// Project files imports
+import * as firstProject from "../pages/projects/temis.mdx";
+import * as secondProject from "../pages/projects/unah-registry.mdx";
+import * as thirdProject from "../pages/projects/voae-site.mdx";
+
+// Projects import
+const matches = import.meta.glob('../pages/projects/*.mdx', { eager: true });
+const projects = Object.values(matches);
+let sortedProjects = sortByPriority(projects);
+
+// Entry Limit
+const projectLimit = 3;
+
+// Props
+const {limitEntries=true} = Astro.props; 
+
+if (limitEntries){
+    sortedProjects = sortedProjects.slice(0, projectLimit);
+}
 ---
 
-<section class="py-25 relative">
+<section class="pb-25 relative">
     <div class="text-center my-12">
         <h2 class="text-7xl font-bold">Projects <span class="italic text-primary">Hightlights</span></h2>
         <p class="my-5 text-2xl">Curated work I have been part of</p>
     </div>
     <div class="flex flex-wrap gap-15 justify-center">
-        <Card title="Temis Software" text={temisDescription} imgSrc="/images/TemisHeroImage.jpg" redirectUrl="Projects">
-            <div><p>Silver medalist at the IS Startup-Challenge!</p></div>
-        </Card>
-        <Card title="Temis Software" text={temisDescription} imgSrc="/images/headshot.jpg" redirectUrl="Projects"/>
-        <Card title="Temis Software" text={temisDescription} imgSrc="/images/headshot.jpg" redirectUrl="Projects"/>
+        {
+            sortedProjects.map((project: any) => {
+                const isTemis = project.frontmatter.title === "Temis: Smart Legal Management";
+                return <Card project={project}>
+                    {
+                        isTemis && (
+                            <div><p>Temis was Silver medalist at the IS Startup-Challenge! 🏆</p></div>
+                        )
+                    }
+                </Card>
+                }
+            )
+        }
     </div>
     <div class="flex justify-center my-15">
-        <Link path="/projects" text="Check more of my work" styleClass=`border border-solid border-primary-dark p-3 font-semibold text-primary-dark hover:bg-primary-dark hover:text-stone-50 transition duration-200 ease-in-out` isRounded={true}/>
+        {
+            limitEntries && (
+                <Link path="/projects" text="Check more of my work" styleClass=`border border-solid border-primary-dark p-3 font-semibold text-primary-dark hover:bg-primary-dark hover:text-stone-50 transition duration-200 ease-in-out` isRounded={true}/>
+            )
+        }
     </div>
 </section>
