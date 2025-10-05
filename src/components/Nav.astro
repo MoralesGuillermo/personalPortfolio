@@ -78,11 +78,17 @@ import Link from "./Link.astro"
     });
 
     // Add logic to close the burger menu if any place of the site is touched (unless is the burger menu or the nav options)
-    body?.addEventListener("touchstart", (event) => {
+    body?.addEventListener("touchstart", (event: any) => {
         // Do not run the logic if the burger menu is pressed or if a nav menu option is pressed
-        if (responsiveMenu.dataset.hidden !== "true" && event.target !== burger && !responsiveMenu?.contains(event.target as Node)){
+        if (responsiveMenu.dataset.hidden !== "true" && event.target !== burger && !responsiveMenu?.contains(event.target)){
             responsiveMenu.classList.add("hidden");
-            responsiveMenu.dataset.hidden = "true"
+            responsiveMenu.dataset.hidden = "true";
+        }
+        // Contact me navigation was clicked. Click and then close the navigation menu
+        if (event.target.innerText === "Contact me" && responsiveMenu?.contains(event.target)){
+            event.target.click();
+            responsiveMenu.classList.add("hidden");
+            responsiveMenu.dataset.hidden = "true";
         }
     })
 </script>
