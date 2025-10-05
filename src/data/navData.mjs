@@ -9,7 +9,7 @@ const navData = [
     },
     {
         title: "Contact me",
-        path: "/#contact"
+        path: "#contact"
     },
     {
         title: "Certifications",
