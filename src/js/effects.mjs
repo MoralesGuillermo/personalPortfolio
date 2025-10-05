@@ -4,6 +4,7 @@
 
 // Hover state
 export const hoverScale125 = "hover:scale-125";
+export const hoverScale105 = "hover:scale-105";
 export const hoverIncreaseMargin= "hover:mx-2";
 export const hoverPrimary = "hover:text-primary";
 export const hoverPrimaryDark = "hover:text-primary-dark";
