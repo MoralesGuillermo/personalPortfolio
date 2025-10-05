@@ -5,7 +5,7 @@ const navData = [
     },
     {
         title: "Projects",
-        path: "/projects"
+        path: "/projects/"
     },
     {
         title: "Contact me",
@@ -13,11 +13,11 @@ const navData = [
     },
     {
         title: "Certifications",
-        path: "/certifications"
+        path: "/certifications/"
     },
     {
         title: "Personal",
-        path: "/me"
+        path: "/me/"
     },
 ]
 
