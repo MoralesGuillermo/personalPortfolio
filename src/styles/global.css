@@ -45,3 +45,20 @@ body{
 .navlink.selected:hover{
     color: white;
 }
+
+/*Markdown files styles*/
+.markdown h2{
+    font-size: var(--text-4xl);
+    font-weight: var(--font-weight-semibold);
+    margin-top: 3rem;
+}
+
+.markdown h3{
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-semibold);
+}
+
+.markdown p{
+    font-size: var(--text-2xl);
+    margin-bottom: 1.5rem;
+}
