@@ -4,23 +4,24 @@ import Image from "astro/components/Image.astro";
 // Effects
 import * as Effects from "../js/effects.mjs"
 
-
-const {title, text, imgSrc, redirectUrl} = Astro.props;
+const {project} = Astro.props
+const {title, description, cover} = project.frontmatter;
+const redirectUrl = project.url;
 ---
 
-<div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-sm">
+<div class="max-w-md bg-white border border-gray-200 rounded-lg shadow-sm" class:list={[Effects.hoverScale105, Effects.easeInFast]}>
     <div>
         <a href={redirectUrl}>
-            <Image class="rounded-t-lg aspect-2/1 object-cover" src={imgSrc} alt="" width={448} height={382} tabindex="-1"/>
+            <Image class="rounded-t-lg aspect-2/1 object-cover" src={cover} alt="" width={448} height={382} tabindex="-1"/>
         </a>
     </div>
     <div class="p-5">
         <a href={redirectUrl}>
             <h3 class="mb-2 text-2xl font-bold text-gray-900 inline-block" class:list={[Effects.hoverPrimaryDark]}>{title}</h3>
         </a>
-        <p class="mb-3 font-normal text-gray-700">{text}</p>
+        <p class="mb-3 font-thin text-xl text-gray-500">{description}</p>
         <slot></slot>
-        <a href={redirectUrl} class=" mt-5 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-primary-dark focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <a href={redirectUrl} class=" mt-5 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-primary rounded-lg hover:bg-primary-dark focus:ring-4 focus:outline-none">
             Read more
         </a>
     </div>
