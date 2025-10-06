@@ -12,10 +12,6 @@ const navData = [
         path: "#contact"
     },
     {
-        title: "Certifications",
-        path: "/certifications/"
-    },
-    {
         title: "Personal",
         path: "/me/"
     },
