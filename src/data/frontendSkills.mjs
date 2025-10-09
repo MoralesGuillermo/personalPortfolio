@@ -17,18 +17,17 @@ const skills = [
         color: "#F7DF1E",
         proficiency: "Advanced",
     },
-    
-    {
-        name: "tech/tailwindcss",
-        text: "Tailwind",
-        color: "#06B6D4",
-        proficiency: "Intermediate",
-    },
     {
         name: "tech/bootstrap",
         text: "Bootstrap",
         color: "#7952B3",
         proficiency: "Advanced",
+    },
+    {
+        name: "tech/tailwindcss",
+        text: "Tailwind",
+        color: "#06B6D4",
+        proficiency: "Intermediate",
     },
     {
         name: "tech/astro",
