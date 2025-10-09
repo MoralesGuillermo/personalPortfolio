@@ -11,10 +11,6 @@ const navData = [
         title: "Contact me",
         path: "#contact"
     },
-    {
-        title: "Personal",
-        path: "/me/"
-    },
 ]
 
 export default navData;
