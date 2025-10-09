@@ -6,6 +6,12 @@ const skills = [
         proficiency: "Advanced"
     },
     {
+        name: "tech/php",
+        text: "PHP",
+        color: "#777BB4",
+        proficiency: "Advanced"
+    },
+    {
         name: "tech/fastapi",
         text: "Fastapi",
         color: "#009688",
@@ -22,12 +28,6 @@ const skills = [
         text: "Springboot",
         color: "#6DB33F",
         proficiency: "Intermediate"
-    },
-    {
-        name: "tech/php",
-        text: "PHP",
-        color: "#777BB4",
-        proficiency: "Advanced"
     },
     {
         name: "tech/laravel",
