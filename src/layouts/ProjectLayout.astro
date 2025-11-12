@@ -4,6 +4,7 @@ import skills from "../data/Skills.mjs"
 import Pill from "../components/Pill.astro";
 import Gallery from "../components/Gallery.astro";
 import InteractiveCarousel from "../components/Carousel";
+import Link from "../components/Link.astro";
 
 interface ProjectTag{
     name: String,
@@ -34,6 +35,26 @@ const projectTags = tags.map((tag: String) => skills.get(tag)) as ProjectTag[]
                 projectTags.map((tag: ProjectTag) => (<Pill name={tag.name} text={tag.text} color={tag.color}/>))
             }
             </div>
+        </div>
+        <div class="mb-10">
+            {
+                repo && (
+                    <p class="text-3xl mt-10">Project Repository:</p>
+                    <Link 
+                        path={repo} 
+                        text="Repository" 
+                        styleClass="bg-primary px-5 py-3 inline-block mt-3 text-white font-semibold hover:bg-primary-dark"
+                        isRounded={true}
+                        newTab={true}
+                        icon = {
+                            {
+                                name: "tech/github",
+                                atLeft: true,
+                            }
+                        }
+                    />
+                )
+            }
         </div>
         <div class="markdown">
             <slot></slot>
