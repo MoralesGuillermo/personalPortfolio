@@ -45,8 +45,8 @@ function InteractiveCarousel({content}: {content: Image[]}) {
                 ))
             }
         </CarouselContent>
-        <CarouselPrevious  className="max-sm:hidden"/>
-        <CarouselNext className="max-sm:hidden"/>
+        <CarouselPrevious  className="max-sm:hidden hover:cursor-pointer hover:focus:bg-primary"/>
+        <CarouselNext className="max-sm:hidden hover:cursor-pointer hover:focus:bg-primary"/>
         <div className="text-muted-foreground py-2 text-center text-sm">
             Slide {current} of {count}
         </div>

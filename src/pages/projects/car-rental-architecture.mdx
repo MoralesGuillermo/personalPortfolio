@@ -1,0 +1,53 @@
+---
+title: "Car Rental System Architecture Design and Deployment with Terraform"
+description: "Designing a robust architecture for a car rental system is crucial for ensuring scalability, reliability, and efficiency. This project involved creating a comprehensive architecture for a car rental company using Terraform to automate the deployment process. Explore the details of this architecture design and its implementation here!"
+cover: {
+    src: "/images/carRentalArchitecture/cover.png",
+    alt: "Car rental system architecture"
+}
+images: [
+    {
+        src: "/images/carRentalArchitecture/cover.png",
+        alt: "Car rental system architecture diagram"
+    },
+    {
+        src: "/images/carRentalArchitecture/completeResourceGroup.png",
+        alt: "Resource group with all deployed resources in Azure"
+    }
+]
+layout: "../../layouts/ProjectLayout.astro" 
+tags: ["terraform", "azure"]
+repo: "https://github.com/MoralesGuillermo/carRentalArch"
+priority: 3
+---
+
+## About the Project
+A car rental company was in need of a robust and scalable architecture to support its operations. The goal was to design an architecture that could handle complex analytics and data processing without hindering the businesses application's performance.
+
+The non functional requirements of the system were as follows:
+- Have a relational, secure and scalable transactional database to store the car rental data
+- Implement an analytics storage for both Data Lake and Data Warehouse
+- Have a data orchestration tool to automate batch data pipelines to move data from the transactional database to the analytics storage
+- Have an analytics workspace that allows notebooks and Apache Spark clusters support
+- Safe secret management for sensitive information
+
+
+## Solution
+The architecture was deployed using Azure as the data cloud provider and Terraform as the infrastructure as code tool.
+
+To meet all the system's requierments, I designed an architecture that included the following components:
+- Azure App Service: To host both the UI and API webapps for the car rental business application
+- Azure SQL Database: To host both the transactional and data warehouse databases
+- Azure Storage Account with Blob Storage: As a simple, effective data lake to store OLTP data as json format for further processing and availability for other pipelines.
+- Azure Data Factory: To orchestrate data pipelines to perform ETL transactions from the OLTP database to the Data Lake
+- Databricks: As the analytics workspace to perform data transformations and machine learning training using Apache Spark clusters
+- Azure Key Vault: To securely store sensitive information and assign roles for each service to access only the secrets they need.
+
+
+## My role at the project
+
+<span class="text-primary font-semibold">Designed</span> the system's architecture to meet all the specified client's requirements
+
+<span class="text-primary font-semibold">Deployed</span> the designed architecture using Terraform to automate the provisioning of resources in Azure
+
+

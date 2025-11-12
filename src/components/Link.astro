@@ -37,13 +37,17 @@ const {
 <a href={path} target={newTab? "_blank": "_self" } class:list={[styleClass, "text-center", {selected: isSelected, "rounded-full": isRounded}]}>
     {
         icon && icon.atLeft && (
-            <Icon name={icon.name} width={icon.width? icon.width: 24} height={icon.height? icon.height: 24}/>
+            <span class="pe-1">
+                <Icon name={icon.name} width={icon.width? icon.width: 24} height={icon.height? icon.height: 24} class="inline"/>
+            </span>
         )
     }
     <span>{text}</span>
     {
         icon && !icon.atLeft && (
-            <Icon name={icon.name} width={icon.width? icon.width: 24} height={icon.height? icon.height: 24}/>
+            <span class="ps-1">
+                <Icon name={icon.name} width={icon.width? icon.width: 24} height={icon.height? icon.height: 24} class="inline"/>
+            </span>
         )
     }
 </a>

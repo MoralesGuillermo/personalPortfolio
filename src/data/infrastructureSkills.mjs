@@ -17,6 +17,18 @@ const skills = [
         color: "#2CA02C",
         proficiency: "Exploring it"
     },
+    {
+        name: "tech/azure",
+        text: "Azure",
+        color: "#007fff",
+        proficiency: "Exploring it"
+    },
+    {
+        name: "tech/terraform",
+        text: "Terraform",
+        color: "#7B42BC",
+        proficiency: "Exploring it"
+    },
 ];
 
 const infrastructureSkills = new Map();
