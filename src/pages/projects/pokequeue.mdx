@@ -1,53 +1,57 @@
 ---
-title: "Car Rental System Architecture Design and Deployment with Terraform"
-description: "Designing a robust architecture for a car rental system is crucial for ensuring scalability, reliability, and efficiency. This project involved creating a comprehensive architecture for a car rental company using Terraform to automate the deployment process. Explore the details of this architecture design and its implementation here!"
+title: "PokeQueue: Report Generator System with Queues and Workers"
+description: "Pokequeue is a web app to generate reports about pokemons using the PokeAPI. The system is design with scalability in mind, implementing queues and background processes to handle the generation of reports asynchonously. Check about PokeQueue in this page!"
 cover: {
-    src: "/images/carRentalArchitecture/cover.png",
-    alt: "Car rental system architecture"
+    src: "/images/pokequeue/cover.png",
+    alt: "Pokequeue: Report Generator System with Queues and Workers"
 }
 images: [
     {
-        src: "/images/carRentalArchitecture/cover.png",
-        alt: "Car rental system architecture diagram"
+        src: "/images/pokequeue/cover.png",
+        alt: "Pokequeue: Report Generator System with Queues and Workers"
     },
     {
-        src: "/images/carRentalArchitecture/completeResourceGroup.png",
-        alt: "Resource group with all deployed resources in Azure"
+        src: "/images/pokequeue/architecture.png",
+        alt: "PokeQueue's architecture"
     }
 ]
 layout: "../../layouts/ProjectLayout.astro" 
-tags: ["terraform", "azure"]
-repo: "https://github.com/MoralesGuillermo/carRentalArch"
-priority: 3
+tags: ["azure", "terraform", "docker", "blob storage", "queue storage", "nextjs", "fastapi", "python", "azure functions", "azure sql" ]
+repo: ""
+priority: 0
 ---
 
+## Project Repositories
+- <span class="underline hover:text-primary">[UI Repository](https://github.com/MoralesGuillermo/poke.queue.ui)</span>
+- <span class="underline hover:text-primary">[API Repository](https://github.com/MoralesGuillermo/poke.queue.api)</span>
+- <span class="underline hover:text-primary">[Function App Repository](https://github.com/MoralesGuillermo/poke.queue.function)</span>
+- <span class="underline hover:text-primary">[Terraform Repository](https://github.com/MoralesGuillermo/poke.terraform)</span>
+- <span class="underline hover:text-primary">[SQL Repository](https://github.com/MoralesGuillermo/poke.queue.sql)</span>
+
 ## About the Project
-A car rental company was in need of a robust and scalable architecture to support its operations. The goal was to design an architecture that could handle complex analytics and data processing without hindering the businesses application's performance.
+PokeQueue is a web app for the generation of reports utilizing the PokeAPI. PokeQueue is a system designed to handle big workloads by transferring the burden of report generation from the API to a background process (worker) implemented with Azure Functions
 
-The non functional requirements of the system were as follows:
-- Have a relational, secure and scalable transactional database to store the car rental data
-- Implement an analytics storage for both Data Lake and Data Warehouse
-- Have a data orchestration tool to automate batch data pipelines to move data from the transactional database to the analytics storage
-- Have an analytics workspace that allows notebooks and Apache Spark clusters support
-- Safe secret management for sensitive information
-
+The API and the worker are connected via a Storage Queue, that passes the messages of the reports to be generated.
 
 ## Solution
-The architecture was deployed using Azure as the data cloud provider and Terraform as the infrastructure as code tool.
+To increase the system's capabilities, the following functionalities were added to the PokeQueue
+- Implemented report deletion utilizing both the API and the worker to give a fast and smooth process to the client
+- Added error handling for unprocessable messages using poison-queues.
+- Enriched the reports data; consuming the PokeAPI, more data about a pokemon was added to each report
+- Implemented the sample size functionality, so users can generate reports with their desired amount of pokemon
 
-To meet all the system's requierments, I designed an architecture that included the following components:
-- Azure App Service: To host both the UI and API webapps for the car rental business application
-- Azure SQL Database: To host both the transactional and data warehouse databases
-- Azure Storage Account with Blob Storage: As a simple, effective data lake to store OLTP data as json format for further processing and availability for other pipelines.
-- Azure Data Factory: To orchestrate data pipelines to perform ETL transactions from the OLTP database to the Data Lake
-- Databricks: As the analytics workspace to perform data transformations and machine learning training using Apache Spark clusters
-- Azure Key Vault: To securely store sensitive information and assign roles for each service to access only the secrets they need.
-
+All these solutions where designed and developed with the user in mind, and respecting the presented architecture by the Systems Architect
 
 ## My role at the project
+My role at the project was to add more features to the PokeQueue. The goal was to add the report elimination, enriched reports, and sampling features. 
 
-<span class="text-primary font-semibold">Designed</span> the system's architecture to meet all the specified client's requirements
+<span class="text-primary font-semibold">Designed</span> the report elimination, enriched reports and sampling features for the pokequeue, following the system's architecture and using the provided cloud services.
 
-<span class="text-primary font-semibold">Deployed</span> the designed architecture using Terraform to automate the provisioning of resources in Azure
+<span class="text-primary font-semibold">Devoloped</span> the aforementioned features, following clean code practices and utilizing the system's carRentalArchitecture
+
+<span class="text-primary font-semibold">Deployed</span> the aforementioned features with Docker, keeping the app live without any interruptions
+
+
+
 
 
