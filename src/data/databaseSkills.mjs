@@ -18,6 +18,12 @@ const skills = [
         proficiency: "Advanced"
     },
     {
+        name: "tech/azuresql",
+        text: "Azure SQL",
+        color: "#007FFF",
+        proficiency: "Advanced"
+    },
+    {
         name: "tech/postgresql",
         text: "PostgreSQL",
         color: "#4169E1",

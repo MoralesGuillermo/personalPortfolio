@@ -35,6 +35,12 @@ const skills = [
         color: "#BC52EE",
         proficiency: "Intermediate",
     },
+    {
+        name: "tech/nextjs",
+        text: "NextJS",
+        color: "#001100",
+        proficiency: "Exploring it",
+    },
 ];
 
 const frontendSkills = new Map();

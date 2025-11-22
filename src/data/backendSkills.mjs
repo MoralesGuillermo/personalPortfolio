@@ -40,7 +40,14 @@ const skills = [
         text: "Node JS",
         color: "#5FA04E",
         proficiency: "Intermediate"
-    }
+    },
+    {
+        name: "tech/azurefunctions",
+        text: "Azure Functions",
+        color: "#008AD7",
+        proficiency: "Intermediate"
+    },
+
 ];
 
 const backendSkills = new Map();

@@ -29,6 +29,24 @@ const skills = [
         color: "#7B42BC",
         proficiency: "Exploring it"
     },
+    {
+        name: "tech/docker",
+        text: "Docker",
+        color: "#E5F2FC",
+        proficiency: "Exploring it"
+    },
+    {
+        name: "tech/blobstorage",
+        text: "Blob Storage",
+        color: "#007FFF",
+        proficiency: "Exploring it"
+    },
+    {
+        name: "tech/queuestorage",
+        text: "Queue Storage",
+        color: "#007FFF",
+        proficiency: "Exploring it"
+    },
 ];
 
 const infrastructureSkills = new Map();
